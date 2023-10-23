@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  dev:
+    container_name: dev
+    build: 
+      context: .
+      dockerfile: Dockerfiles/Dockerfile.Dev
+    environment:
+      - APP=DEVELOPMENT
+    ports:
+      - '8001:80'
+    volumes:
+      - "${PWD}/application/:/var/www/html"

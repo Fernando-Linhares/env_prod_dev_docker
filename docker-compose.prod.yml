@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  prod:
+    container_name: prod
+    build: 
+      context: .
+      dockerfile: Dockerfiles/Dockerfile.Prod
+    environment:
+      - APP=DEVELOPMENT
+    ports:
+      - '8002:80'
+    volumes:
+      - "${PWD}/application/:/var/www/html"
+    
